@@ -50,11 +50,7 @@ def find_path(name: str, path: str = None) -> str:
     parent_directory = os.path.dirname(path)
 
     # If the parent directory is the same as the current directory, we've reached the root and stop the search
-    if parent_directory == path:
-        return None
-
-    # Recursively call the function with the parent directory
-    return find_path(name, parent_directory)
+    return None if parent_directory == path else find_path(name, parent_directory)
 
 
 def add_comfyui_directory_to_sys_path() -> None:
